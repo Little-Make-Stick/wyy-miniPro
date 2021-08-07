@@ -1,0 +1,38 @@
+<view class="song-info">
+  <view class="song-name">{{now.name}}</view>
+  <scroll-view class="container">
+    <view class="scrolltxt">
+      <view class="marquee_box">
+        <view class="marquee_text song-artists" style="transform: translateX(-{{marqueeDistance}}px)">
+          <text style="margin-right:{{marquee_margin}}px;">{{now.artists}} - {{now.albumname}}</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<audio id="myAudio" 
+action="{{action}}" 
+src="{{now.mp3Url}}" 
+binderror="errorEvent" 
+bindtimeupdate="timeupdateEvent" 
+bindended="endEvent">
+</audio>
+<image class="play-bg" mode="aspectFill" src="{{now.picUrl}}"></image>
+<image class="trun-bg" mode="aspectFill" src="{{now.picUrl}}" 
+style="transform: translateX(20%) rotate({{deg}}deg);"></image>
+<view class="footer">
+  <view class="progress">
+    <text>{{timeText}}</text>
+    <progress percent="{{time}}" color="red" stroke-width="4" />
+    <text>{{durationText}}</text>
+  </view>
+  <view class="controls">
+    <image class="mode" mode="scaleToFill" bindtap="switchModeEvent" src="../../images/{{mode}}.png" />
+    <image mode="scaleToFill" bindtap="prevEvent" src="../../images/prev.png" />
+    <image mode="scaleToFill" bindtap="actionEvent" src="../../images/{{status==='play' ? 'pause' : 'play'}}.png" />
+    <image mode="scaleToFill" bindtap="nextEvent" src="../../images/next.png" />
+    <button class="fav" bindtap="onShareAppMessage" open-type="share">
+      <image src="../../images/share.png" class="share"></image>
+    </button>
+  </view>
+</view>

@@ -1,0 +1,74 @@
+/**index.wxss**/
+
+page {
+  font-family: "微软雅黑";
+  height: 100%;
+  background: rgb(248, 250, 236);
+}
+
+image {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper {
+  height: 30%;
+  display: block;
+  width: 100%;
+}
+
+.songs {
+  height: 69%;
+  color: rgb(155, 151, 151);
+  font-size: 18px;
+}
+
+@media screen and (min-device-height: 630px) {
+  .songs .song {
+    display: flex;
+    border: 1px solid #ddd;
+    height: 20%;
+  }
+}
+@media screen and (max-device-height: 630px) {
+  .songs .song {
+    display: flex;
+    border: 1px solid #ddd;
+    height: 25%;
+  }
+}
+
+.songs .song .left {
+  width: 30%;
+  padding: 5px;
+}
+
+.songs .song .right {
+  display: flex;
+  width: 90%;
+  padding: 25rpx 0 0 10rpx;
+}
+
+.songs .song .right .content {
+  width: 90%;
+}
+
+.songs .song .right .play {
+  width: 30px;
+  height: 30px;
+  padding: 10px;
+}
+
+.songs .song .right .content .song-name {
+  color: rgb(126, 126, 122);
+  font-size: 45rpx;
+}
+
+.songs .song .right .content .song-artists {
+  font-size: 30rpx;
+  display: block;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width:450rpx;
+}
